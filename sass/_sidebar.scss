@@ -1,0 +1,49 @@
+.sidebar {
+    background-color: $color-primary;
+    grid-columns: sidebar-star/sidebar-end;
+    grid-row: 1 / -1;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: $bp-large) {
+        grid-row: nav-start / nav-end;
+        grid-column: full-start / full-end;
+        justify-content: flex-end;        
+    }
+}
+
+.nav-btn {
+    border: none;
+    border-radius: 0;
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    margin-top: 4rem;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        background-color: #fff;
+        height: 2px;
+        width: 4.5rem;
+    }
+
+    &::before {
+        transform: translateY(-1.5rem);
+    }
+
+    @media screen and (max-width: $bp-large) {
+        margin-top: 2rem;
+        margin-right: 2rem;
+        &::before {
+            transform: translateY(-1.2rem);
+        }
+    
+        &::after {
+            transform: translateY(-.8rem);
+        }
+    
+    }
+    
+
+}
